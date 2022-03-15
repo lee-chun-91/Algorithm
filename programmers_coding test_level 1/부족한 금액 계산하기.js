@@ -1,9 +1,14 @@
-function solution(price, money, count) {
-    let answer = 0;
-
-    for (let i = 1; i <= count; i++) {
-        answer += price * i;
+function solution(price, money, count) {  
+    var sum_price = 0
+    for (i=0; i <= count; i++) {
+      //총 이용 금액 산출
+      sum_price += price*i
+      if (sum_price > money) {
+        answer = sum_price - money
+      } else {
+        answer = 0
+      }
+      
     }
-
-    return answer > money ? answer - money : 0;
-}
+      return answer;
+  }
